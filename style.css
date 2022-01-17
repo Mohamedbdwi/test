@@ -1,0 +1,203 @@
+/*
+1-common styles
+2-General Styles
+3-Sections
+     -Header Section
+     -Home Section 
+     -About Section 
+     -Portfolio Section 
+     -Servises Section 
+     -Prices Section 
+     -Blog page 
+     -Team Section
+     -Footer section
+     */
+    
+/* 1-common styles */
+/*
+    -container ( div with width in screen center )
+    -over lay
+    -opacity hover
+    -section header
+    -section padding
+    -hover effect 1 (left to right )
+    -hover effect 2 ( top to buttom )
+    -
+
+
+*/
+/* 2-General CSS style*/
+h1 ,h2 ,h3 , h4 , h5 ,h6 {
+    font-family: montserrat,sans-serif;
+}
+button{
+    font-family: 'Varela Round', sans-serif;
+}
+.a {
+    text-decoration: none;
+}
+
+* {
+    margin:0;
+    padding:0;
+    box-sizing: border-box;  /*CSS3*/
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+}
+
+body {
+    font-family: 'Varela Round', sans-serif;
+}
+.clear {
+    clear: both;
+}    /* to solve float problem */
+/* 3-Sections styles */
+
+/*Header*/
+.header {
+    position: fixed;
+    width: 100%;  /* make the element not shrink*/
+    z-index: 10;  /* to make the header on the body in line block*/
+}
+
+.header-content {
+   /* overflow: hidden; */  /*يعنى اى حاجه زيادة بره العنصر ما تظهرش*/
+}   /* to solve float problem */ 
+
+.header .logo {
+    width: 40%;
+    float: left;
+}
+.header .logo img{
+    width: 20%;
+    margin-top: 15px;
+}
+
+.header .nav {
+    width: 60%;
+    float: left;
+    list-style: none;  /* to remove black dots in the list */ 
+    text-align: right;
+}
+.header .nav > li {  /* (>) mean li children of nav*/ 
+display: inline-block; /*to make elements next to each others */
+text-align: right;
+}
+.header .nav > li > a {
+    color: white;
+    font-size: 13px;
+    text-decoration: none;  /* to remove lines under links */
+    display: block; /*to give him padding and block is for (a) only */ 
+    padding: 30px 15px;
+}   /* this is for Links and it is better to give padding to links (a) not to list (li) to make links clickable */
+
+.header .nav > li > a.active:after,    /* the(,) is important between 2classes */
+.header .nav > li > a:after{           /*بخصص الهوفر للينك اللى جوه الناف بس */ 
+content: "";
+    display: block;
+    height: 3px;
+    margin-top: 2px;
+    background-color: #6195ff;
+    transition: width 0.5s;
+}
+.header .nav > li > a.active:after{
+    width: 100%;  /*to make the blue underline fixed */
+ 
+}
+.header .nav > li > a:after{
+    width: 0%;
+}
+.header .nav > li > a:hover:after{
+    width: 100%;
+
+}
+.dropdown{
+    position: relative;
+}
+.dropdown-menu{
+    position: absolute;
+    background-color: #6195ff;
+    width: 150px;
+text-align: center;
+left: -50%;
+top: 70%;
+opacity: 0;
+visibility: hidden;   /*ده عشان تختفى*/ 
+transition: opacity 0.5s , visibility 0.5s;   /*ده عشان تختفى*/
+}
+.dropdown-menu a {
+    display: block;
+    padding: 10px;
+    color: #fff;
+    text-decoration: none;
+}
+.dropdown:hover .dropdown-menu {
+    opacity: 1;                      /*من افضل التقنيات فى الدروب داون*/
+visibility: visible;
+}
+
+/* Home Section */
+.home {
+    height: 100vh; /*vh= view port*/
+    background-image: url( ../images/background/background1.webp);
+    background-size: cover;  /*CSS3*/
+    position: relative;
+}
+.home-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%);  /*hero image to center the content on parent*/
+    text-align: center; 
+    width: 65% ;
+}
+.over-lay {
+    position: absolute;  /*to fill the div father*/
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.5);
+}
+.hover-opacity{
+    transition: opacity 0.5s;
+}
+.hover-opacity:hover{
+    opacity: 0.8;
+}
+.home .title {
+    color: wheat;
+    font-size: 3.5rem;
+    text-transform: uppercase; /*make all characters capital*/
+}
+.home .home-desc {
+    margin: 20px 0;
+    color: white;
+    letter-spacing: 2px;
+    line-height: 1.5;
+}
+.home .btn {
+    min-width: 160px;
+    padding: 15px 0;
+    border-radius: 5px;
+    border: 0; /*to remove border shadow*/
+    cursor:  pointer;  /*make mouse like a hand*/
+    font-size: 18px;
+}
+.home .btn-start{
+    margin-right: 10px;
+    background-color: white;
+}
+.home .btn-learn{
+    background-color: #6195ff;
+    color: #fff;
+}
+/* About Section */
+/* Portfolio Section */
+/* Servises Section */
+/* Prices Section */
+/* Blog page */
+/* Team Section */
